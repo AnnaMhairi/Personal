@@ -2,102 +2,98 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* Intro / hero */}
+      <section id="top" className="section pt-2 md:pt-0">
+        <p className="intro-eyebrow text-sm text-[color:var(--muted)]">
+          Los Angeles · Frontend &amp; Solutions Engineer
+        </p>
+        <h2 className="intro-title font-heading text-[36px] md:text-[44px] font-semibold tracking-tight text-[var(--ink)]">
+          I build crisp, human-centered apps <span className="text-[rgb(64,224,208)]">that feel easy.</span>
+        </h2>
+        <p className="intro-body text-[15px] leading-relaxed text-[color:var(--muted)]">
+          Fast MVPs with Next.js, TypeScript, Tailwind, AI, and carrier-safe Twilio SMS (A2P). Calm energy, clean UX, quick iteration.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <a href="#contact" className="btn btn-accent">Get in touch</a>
+          <a href="#projects" className="btn">View projects</a>
+          <a href="/resume" className="btn btn-ghost">Résumé</a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="section">
+        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">About</h3>
+        <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
+          I’m a frontend/solutions engineer who ships polished UI and scrappy MVPs. Comfortable presenting, demoing,
+          and translating technical concepts for stakeholders. Stack: Next.js, TypeScript, Tailwind, Prisma, Twilio, AI.
+        </p>
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="section">
+        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Experience</h3>
+        <ul className="mt-4 space-y-4">
+          {[
+            { role:"Frontend Engineer", org:"OpenSea", meta:"2021–2022 · Remote", body:"Design system + feature work in React/TS; perf tuning; shipped polished UI under tight timelines." },
+            { role:"Frontend", org:"Credit Karma (Autos)", meta:"2019–2021 · LA", body:"Built new flows with a small LA pod that scaled quickly; accessibility + performance minded." },
+            { role:"Solutions Engineer", org:"Freelance", meta:"Ongoing", body:"Rapid MVPs, A2P-compliant funnels, real-estate AI assistants, integrations (Twilio, Supabase, Stripe)." },
+          ].map(x => (
+            <li key={x.role+x.org} className="card p-4">
+              <div className="flex items-baseline justify-between gap-6">
+                <div className="font-heading text-[16px] font-medium text-[var(--ink)]">{x.role} — {x.org}</div>
+                <div className="text-[12px] text-[color:var(--muted)] whitespace-nowrap">{x.meta}</div>
+              </div>
+              <p className="mt-1 text-[14px] leading-relaxed text-[color:var(--muted)]">{x.body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="section">
+        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Projects</h3>
+        <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { title:"Real Estate AI", img:"/projects/real-estate-ai.png", desc:"SMS opt-in, double opt-in, Twilio compliance.", href:"https://github.com/AnnaMhairi/Real-Estate-AI", tags:["Next.js","Twilio","Prisma"], year:"2025" },
+            { title:"LookLab", img:"/projects/looklab.png", desc:"Fashion lookbook marketplace (Expo + web).", href:"#", tags:["Expo","RN","TS"], year:"2024" },
+            { title:"Alexander", img:"/projects/alexander.png", desc:"Self-tape helper & audition tracker with AI analysis.", href:"#", tags:["Next.js","AI","Design"], year:"2025" },
+          ].map(p => (
+            <a key={p.title} href={p.href} className="card p-3 transition hover:bg-white/10">
+              <div className="relative overflow-hidden rounded-md border border-white/10">
+                <Image alt={p.title} src={p.img} width={1200} height={800} className="h-44 w-full object-cover" />
+              </div>
+              <div className="mt-3 flex items-center justify-between">
+                <div className="font-heading text-[15px] font-medium text-[var(--ink)]">{p.title}</div>
+                <span className="text-[11px] text-[color:var(--muted)]">{p.year}</span>
+              </div>
+              <p className="mt-1 text-[14px] leading-relaxed text-[color:var(--muted)]">{p.desc}</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {p.tags.map(t => <span key={t} className="badge">{t}</span>)}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Acting */}
+      <section id="acting" className="section min-h-[40vh]">
+        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Acting</h3>
+        <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
+          Recurring TV roles (e.g. Showtime), indie features, and stage in LA/NYC. Training in on-camera, improv, VO.
+        </p>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="section min-h-[50vh]">
+        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Contact</h3>
+        <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">Email is best. Open to frontend &amp; solutions roles.</p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <a className="btn btn-accent" href="mailto:hello@yourdomain.com">Get in touch</a>
+          <a className="btn" href="https://linkedin.com/in/..." target="_blank" rel="noreferrer">LinkedIn</a>
+          <a className="btn btn-ghost" href="https://github.com/AnnaMhairi" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
+    </>
   );
 }
