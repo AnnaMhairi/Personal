@@ -4,11 +4,11 @@ export default function Home() {
   return (
     <>
       {/* Intro / hero */}
-      <section id="top" className="section pt-2 md:pt-0">
+      <section id="top" className="section">
         <p className="intro-eyebrow text-sm text-[color:var(--muted)]">
           Los Angeles · Frontend &amp; Solutions Engineer
         </p>
-        <h2 className="intro-title font-heading text-[36px] md:text-[44px] font-semibold tracking-tight text-[var(--ink)]">
+        <h2 className="intro-title font-heading text-4xl md:text-5xl font-semibold tracking-tight text-[var(--ink)]">
           I build crisp, human-centered apps <span className="text-[rgb(64,224,208)]">that feel easy.</span>
         </h2>
         <p className="intro-body text-[15px] leading-relaxed text-[color:var(--muted)]">
@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* About */}
       <section id="about" className="section">
-        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">About</h3>
+        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">About</h3>
         <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
           I’m a frontend/solutions engineer who ships polished UI and scrappy MVPs. Comfortable presenting, demoing,
           and translating technical concepts for stakeholders. Stack: Next.js, TypeScript, Tailwind, Prisma, Twilio, AI.
@@ -32,7 +32,7 @@ export default function Home() {
 
       {/* Experience */}
       <section id="experience" className="section">
-        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Experience</h3>
+        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">Experience</h3>
         <ul className="mt-4 space-y-4">
           {[
             { role:"Frontend Engineer", org:"OpenSea", meta:"2021–2022 · Remote", body:"Design system + feature work in React/TS; perf tuning; shipped polished UI under tight timelines." },
@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* Projects */}
       <section id="projects" className="section">
-        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Projects</h3>
+        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">Projects</h3>
         <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { title:"Real Estate AI", img:"/projects/real-estate-ai.png", desc:"SMS opt-in, double opt-in, Twilio compliance.", href:"https://github.com/AnnaMhairi/Real-Estate-AI", tags:["Next.js","Twilio","Prisma"], year:"2025" },
@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* Acting */}
       <section id="acting" className="section min-h-[40vh]">
-        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Acting</h3>
+        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">Acting</h3>
         <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
           Recurring TV roles (e.g. Showtime), indie features, and stage in LA/NYC. Training in on-camera, improv, VO.
         </p>
@@ -86,7 +86,7 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="section min-h-[50vh]">
-        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Contact</h3>
+        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">Contact</h3>
         <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">Email is best. Open to frontend &amp; solutions roles.</p>
         <div className="mt-4 flex flex-wrap gap-3">
           <a className="btn btn-accent" href="mailto:hello@yourdomain.com">Get in touch</a>

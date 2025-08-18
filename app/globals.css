@@ -50,7 +50,6 @@ body::before {
 .font-heading { font-family: var(--font-heading), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif; }
 .prose-muted { color: var(--muted); }
 ::selection { background: rgba(var(--brand),.28); color:#0a2629; }
-:target { scroll-margin-top: 84px; }
 
 /* links */
 a { color: var(--navy); transition: color .18s ease; }
@@ -126,7 +125,7 @@ img, video, canvas { max-width: 100%; height: auto; display: block; }
 }
 
 /* section wrapper + separators */
-.section { padding-block: var(--space-section-sm); }
+.section { padding-block: var(--space-section-sm); scroll-margin-top: 96px; }
 @media (min-width: 768px){
   .section { padding-block: var(--space-section); }
 }
