@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { projects } from "@/app/data/projects";
+
 
 export default function Home() {
   return (
@@ -19,7 +21,7 @@ export default function Home() {
           <a href="#projects" className="btn">View projects</a>
           <a href="/resume" className="btn btn-ghost">Résumé</a>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* About */}
       <section id="about" className="section">
@@ -28,7 +30,7 @@ export default function Home() {
           I’m a frontend/solutions engineer who ships polished UI and scrappy MVPs. Comfortable presenting, demoing,
           and translating technical concepts for stakeholders. Stack: Next.js, TypeScript, Tailwind, Prisma, Twilio, AI.
         </p>
-      </section>
+      </FadeInSection>
 
       {/* Experience */}
       <section id="experience" className="section">
@@ -48,7 +50,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </section>
+      </FadeInSection>
 
       {/* Projects */}
       <section id="projects" className="section">
@@ -82,7 +84,7 @@ export default function Home() {
         <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
           Recurring TV roles (e.g. Showtime), indie features, and stage in LA/NYC. Training in on-camera, improv, VO.
         </p>
-      </section>
+      </FadeInSection>
 
       {/* Contact */}
       <section id="contact" className="section min-h-[50vh]">
@@ -93,7 +95,7 @@ export default function Home() {
           <a className="btn" href="https://linkedin.com/in/..." target="_blank" rel="noreferrer">LinkedIn</a>
           <a className="btn btn-ghost" href="https://github.com/AnnaMhairi" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-      </section>
+      </FadeInSection>
     </>
   );
 }
