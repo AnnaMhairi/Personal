@@ -5,33 +5,19 @@ import { projects } from "@/app/data/projects";
 export default function Home() {
   return (
     <>
-      {/* Intro / hero */}
-      <section id="top" className="section">
-        <p className="intro-eyebrow text-sm text-[color:var(--muted)]">
-          Los Angeles · Frontend &amp; Solutions Engineer
-        </p>
-        <h2 className="intro-title font-heading text-4xl md:text-5xl font-semibold tracking-tight text-[var(--ink)]">
-          I build crisp, human-centered apps <span className="text-[rgb(64,224,208)]">that feel easy.</span>
-        </h2>
-        <p className="intro-body text-[15px] leading-relaxed text-[color:var(--muted)]">
-          Fast MVPs with Next.js, TypeScript, Tailwind, AI, and carrier-safe Twilio SMS (A2P). Calm energy, clean UX, quick iteration.
-        </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <a href="#contact" className="btn btn-accent">Get in touch</a>
-          <a href="#projects" className="btn">View projects</a>
-          <a href="/resume" className="btn btn-ghost">Résumé</a>
-        </div>
-      </FadeInSection>
-
-      {/* About */}
       <section id="about" className="section">
-        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">About</h3>
         <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
-          I’m a frontend/solutions engineer who ships polished UI and scrappy MVPs. Comfortable presenting, demoing,
-          and translating technical concepts for stakeholders. Stack: Next.js, TypeScript, Tailwind, Prisma, Twilio, AI.
-        </p>
-      </FadeInSection>
+        I’m a front-end engineer passionate about building thoughtful, accessible interfaces that balance design polish with strong technical foundations. My favorite work sits at the intersection of design and engineering — turning complex ideas into experiences that are intuitive, performant, and visually engaging.
 
+Most recently, I’ve been working on Actor’s Friend (formerly Alexander), an app I designed and built to help actors with script prep, self-tapes, and audition tracking. It’s given me the chance to combine product thinking, UX design, and engineering craft — everything from React/Next.js development to AI-powered scene analysis and cross-platform responsive design.
+
+In the past, I contributed to large-scale products at OpenSea and Credit Karma. At OpenSea, I helped build and refine the NFT detail display pages, squash tricky frontend bugs, and polish the marketplace’s core browsing experience. At Credit Karma, I was part of the early autos team, helping scale new features as the group grew from a small pod to a much larger org.
+
+After a few years pursuing acting full-time (including roles in TV and film), I’m excited to bring that creative perspective back into engineering. The break gave me a sharper sense of storytelling and user empathy — skills I now channel into building tools that feel not just functional, but personal and human.
+
+When I’m not coding, you’ll usually find me acting, playing music, or getting lost in a cozy mystery audiobook.
+        </p>
+      </section>
       {/* Experience */}
       <section id="experience" className="section">
         <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">Experience</h3>
@@ -50,7 +36,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </FadeInSection>
+      </section>
 
       {/* Projects */}
       <section id="projects" className="section">
@@ -84,7 +70,7 @@ export default function Home() {
         <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
           Recurring TV roles (e.g. Showtime), indie features, and stage in LA/NYC. Training in on-camera, improv, VO.
         </p>
-      </FadeInSection>
+      </section>
 
       {/* Contact */}
       <section id="contact" className="section min-h-[50vh]">
@@ -95,7 +81,7 @@ export default function Home() {
           <a className="btn" href="https://linkedin.com/in/..." target="_blank" rel="noreferrer">LinkedIn</a>
           <a className="btn btn-ghost" href="https://github.com/AnnaMhairi" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-      </FadeInSection>
-    </>
+      </section>
+      </>
   );
 }
