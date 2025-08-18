@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const SECTIONS = ["about", "experience", "projects", "acting", "contact"] as const;
-type SectionId = typeof SECTIONS[number];
+const SECTIONS = ["about", "experience", "projects", "contact"] as const;
+type SectionId = (typeof SECTIONS)[number];
 
 export default function ScrollSpyNav() {
   const [active, setActive] = useState<SectionId>("about");
@@ -60,14 +60,16 @@ export default function ScrollSpyNav() {
   };
 
   return (
-    <nav className="hidden sm:block">
+    <nav aria-label="Section navigation">
       <ul className="space-y-2 text-sm">
         {SECTIONS.map((id) => (
           <li key={id}>
             <a
               href={`#${id}`}
               onClick={go(id)}
-              className={`link block py-1 ${active === id ? "link-active" : ""}`}
+              className={`link block py-1 font-heading transition-colors hover:text-[rgb(var(--accent))] ${
+                active === id ? "font-semibold text-[rgb(var(--accent))]" : ""
+              }`}
               aria-current={active === id ? "true" : undefined}
             >
               {id[0].toUpperCase() + id.slice(1)}
@@ -77,8 +79,12 @@ export default function ScrollSpyNav() {
       </ul>
 
       <div className="mt-6 flex gap-3">
-        <a className="btn btn-ghost" href="/resume" target="_blank" rel="noreferrer">Résumé</a>
-        <a className="btn btn-accent" href="#contact" onClick={go("contact")}>Get in touch</a>
+        <a className="btn btn-ghost" href="/resume" target="_blank" rel="noreferrer">
+          Résumé
+        </a>
+        <a className="btn btn-accent" href="#contact" onClick={go("contact")}>
+          Get in touch
+        </a>
       </div>
     </nav>
   );
