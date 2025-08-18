@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { projects } from "@/app/data/projects";
 
+
 export default function Home() {
   return (
     <>
       {/* Intro / hero */}
-      <section id="top" className="section pt-2 md:pt-0">
+      <FadeInSection id="top" className="section pt-2 md:pt-0">
         <p className="intro-eyebrow text-sm text-[color:var(--muted)]">
           Los Angeles · Frontend &amp; Solutions Engineer
         </p>
@@ -20,19 +21,19 @@ export default function Home() {
           <a href="#projects" className="btn">View projects</a>
           <a href="/resume" className="btn btn-ghost">Résumé</a>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* About */}
-      <section id="about" className="section">
+      <FadeInSection id="about" className="section">
         <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">About</h3>
         <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
           I’m a frontend/solutions engineer who ships polished UI and scrappy MVPs. Comfortable presenting, demoing,
           and translating technical concepts for stakeholders. Stack: Next.js, TypeScript, Tailwind, Prisma, Twilio, AI.
         </p>
-      </section>
+      </FadeInSection>
 
       {/* Experience */}
-      <section id="experience" className="section">
+      <FadeInSection id="experience" className="section">
         <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Experience</h3>
         <ul className="mt-4 space-y-4">
           {[
@@ -49,9 +50,10 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </section>
+      </FadeInSection>
 
       {/* Projects */}
+
         <section id="projects" className="section">
           <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">
             Projects
@@ -93,16 +95,17 @@ export default function Home() {
           </div>
         </section>
 
+
       {/* Acting */}
-      <section id="acting" className="section min-h-[40vh]">
+      <FadeInSection id="acting" className="section min-h-[40vh]">
         <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Acting</h3>
         <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
           Recurring TV roles (e.g. Showtime), indie features, and stage in LA/NYC. Training in on-camera, improv, VO.
         </p>
-      </section>
+      </FadeInSection>
 
       {/* Contact */}
-      <section id="contact" className="section min-h-[50vh]">
+      <FadeInSection id="contact" className="section min-h-[50vh]">
         <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Contact</h3>
         <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">Email is best. Open to frontend &amp; solutions roles.</p>
         <div className="mt-4 flex flex-wrap gap-3">
@@ -110,7 +113,7 @@ export default function Home() {
           <a className="btn" href="https://linkedin.com/in/..." target="_blank" rel="noreferrer">LinkedIn</a>
           <a className="btn btn-ghost" href="https://github.com/AnnaMhairi" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-      </section>
+      </FadeInSection>
     </>
   );
 }
