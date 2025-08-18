@@ -1,5 +1,6 @@
 import Image from "next/image";
-import FadeInSection from "./components/FadeInSection";
+import { projects } from "@/app/data/projects";
+
 
 export default function Home() {
   return (
@@ -52,30 +53,48 @@ export default function Home() {
       </FadeInSection>
 
       {/* Projects */}
-      <FadeInSection id="projects" className="section">
-        <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">Projects</h3>
-        <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { title:"Real Estate AI", img:"/projects/real-estate-ai.png", desc:"SMS opt-in, double opt-in, Twilio compliance.", href:"https://github.com/AnnaMhairi/Real-Estate-AI", tags:["Next.js","Twilio","Prisma"], year:"2025" },
-            { title:"LookLab", img:"/projects/looklab.png", desc:"Fashion lookbook marketplace (Expo + web).", href:"#", tags:["Expo","RN","TS"], year:"2024" },
-            { title:"Alexander", img:"/projects/alexander.png", desc:"Self-tape helper & audition tracker with AI analysis.", href:"#", tags:["Next.js","AI","Design"], year:"2025" },
-          ].map(p => (
-            <a key={p.title} href={p.href} className="card p-3 transition hover:bg-white/10">
-              <div className="relative overflow-hidden rounded-md border border-white/10">
-                <Image alt={p.title} src={p.img} width={1200} height={800} className="h-44 w-full object-cover" />
-              </div>
-              <div className="mt-3 flex items-center justify-between">
-                <div className="font-heading text-[15px] font-medium text-[var(--ink)]">{p.title}</div>
-                <span className="text-[11px] text-[color:var(--muted)]">{p.year}</span>
-              </div>
-              <p className="mt-1 text-[14px] leading-relaxed text-[color:var(--muted)]">{p.desc}</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {p.tags.map(t => <span key={t} className="badge">{t}</span>)}
-              </div>
-            </a>
-          ))}
-        </div>
-      </FadeInSection>
+
+        <section id="projects" className="section">
+          <h3 className="font-heading text-[20px] md:text-[22px] font-semibold leading-tight tracking-tight text-[var(--ink)]">
+            Projects
+          </h3>
+          <div className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((p) => (
+              <a
+                key={p.slug}
+                href={p.href}
+                className="card group overflow-hidden p-3 transition-transform hover:scale-[1.02] hover:shadow-lg"
+              >
+                <div className="relative overflow-hidden rounded-md border border-white/10 transition group-hover:border-white/20">
+                  <Image
+                    alt={p.title}
+                    src={p.image}
+                    width={1200}
+                    height={800}
+                    className="h-44 w-full object-cover"
+                  />
+                </div>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="font-heading text-[15px] font-medium text-[var(--ink)]">
+                    {p.title}
+                  </div>
+                  <span className="text-[11px] text-[color:var(--muted)]">{p.year}</span>
+                </div>
+                <p className="mt-1 text-[14px] leading-relaxed text-[color:var(--muted)]">
+                  {p.description}
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <span key={t} className="badge">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
 
       {/* Acting */}
       <FadeInSection id="acting" className="section min-h-[40vh]">
