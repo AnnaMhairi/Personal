@@ -146,3 +146,21 @@ img, video, canvas { max-width: 100%; height: auto; display: block; }
 .container { max-width: 1120px; }      /* ~ref 1100–1200px */
 .gap-rhythm { gap: 2.5rem; }           /* base gap */
 @media (min-width: 1024px){ .gap-rhythm{ gap: 4rem; } }
+
+/* fade-in sections */
+.fade-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
