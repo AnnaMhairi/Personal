@@ -4,7 +4,7 @@ export default function Resume() {
   return (
     <section className="card p-7">
       <h1 className="text-2xl font-semibold">Résumé</h1>
-      <p className="mt-2 text-slate-300">Frontend & Solutions Engineer · Actor</p>
+      <p className="mt-2 text-slate-300">Frontend Engineer</p>
       <a className="btn mt-4" href="/anna-resume.pdf" target="_blank" rel="noreferrer">Download PDF</a>
 
       <h2 className="mt-6 font-semibold">Highlights</h2>

@@ -1,87 +1,100 @@
-import Image from "next/image";
-import { projects } from "@/app/data/projects";
+import Sidebar from "./components/Sidebar";
 
-
-export default function Home() {
+function MobileHero() {
   return (
-    <>
-      <section id="about" className="section">
-        <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
-        I’m a front-end engineer passionate about building thoughtful, accessible interfaces that balance design polish with strong technical foundations. My favorite work sits at the intersection of design and engineering — turning complex ideas into experiences that are intuitive, performant, and visually engaging.
+    <header className="lg:hidden mb-8">
+      <h1 className="text-3xl font-semibold tracking-tight">Anna MacDonald</h1>
+      <p className="mt-1 text-sm text-white/70">Frontend Engineer · LA</p>
+      <p className="mt-4 text-[15px] leading-relaxed text-white/80">
+        I build crisp, accessible interfaces with <b>React</b>, <b>TypeScript</b>, and <b>Next.js</b>.
+        Calm energy, fast iteration.
+      </p>
+    </header>
+  );
+}
 
-Most recently, I’ve been working on Actor’s Friend (formerly Alexander), an app I designed and built to help actors with script prep, self-tapes, and audition tracking. It’s given me the chance to combine product thinking, UX design, and engineering craft — everything from React/Next.js development to AI-powered scene analysis and cross-platform responsive design.
+export default function Page() {
+  return (
+    <main className="mx-auto max-w-5xl px-6 md:px-8 py-10 md:py-16 min-h-screen">
+      {/* Robust grid: 1 col on small, 2 cols on md, 12-col on lg */}
+      <div className="grid items-start gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-12">
+        {/* Left rail: visible from md up; takes 4/12 on lg */}
+        <aside className="hidden md:block md:col-span-1 lg:col-span-4 sticky top-10 self-start">
+          <Sidebar />
+        </aside>
 
-In the past, I contributed to large-scale products at OpenSea and Credit Karma. At OpenSea, I helped build and refine the NFT detail display pages, squash tricky frontend bugs, and polish the marketplace’s core browsing experience. At Credit Karma, I was part of the early autos team, helping scale new features as the group grew from a small pod to a much larger org.
+        {/* Right column */}
+        <div className="md:col-span-1 lg:col-span-8 space-y-24 md:space-y-28 pt-1 md:pt-2 max-w-[65ch]">
+          <MobileHero />
 
-After a few years pursuing acting full-time (including roles in TV and film), I’m excited to bring that creative perspective back into engineering. The break gave me a sharper sense of storytelling and user empathy — skills I now channel into building tools that feel not just functional, but personal and human.
+          {/* About */}
+          <section id="about" className="scroll-mt-32">
+            <div className="flex items-center gap-4">
+              <h2 className="section-title">About</h2>
+              <div className="title-rule flex-1" />
+            </div>
+            <div className="mt-5 text-[15px] leading-relaxed text-white/85 space-y-4">
+              <p>
+                I’m a front-end engineer focused on accessible, performant UI that looks clean and feels effortless.
+                I’ve shipped at OpenSea and Credit Karma, and I build polished MVPs with Next.js, Tailwind, and AI.
+              </p>
+              <p>
+                Recently I’ve been building <b>Actor’s Friend</b> (scene analysis, self-tape helper, audition tracker)
+                and a <b>Real Estate AI</b> (carrier-safe SMS assistant that helps buyers and renters research properties). I care about clear UX, resilient systems, and fast iteration.
+              </p>
+            </div>
+          </section>
 
-When I’m not coding, you’ll usually find me acting, playing music, or getting lost in a cozy mystery audiobook.
-        </p>
-      </section>
-      {/* Experience */}
-      <section id="experience" className="section">
-        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">Experience</h3>
-        <ul className="mt-4 space-y-4">
-          {[
-            { role:"Frontend Engineer", org:"OpenSea", meta:"2021–2022 · Remote", body:"Design system + feature work in React/TS; perf tuning; shipped polished UI under tight timelines." },
-            { role:"Frontend", org:"Credit Karma (Autos)", meta:"2019–2021 · LA", body:"Built new flows with a small LA pod that scaled quickly; accessibility + performance minded." },
-            { role:"Solutions Engineer", org:"Freelance", meta:"Ongoing", body:"Rapid MVPs, A2P-compliant funnels, real-estate AI assistants, integrations (Twilio, Supabase, Stripe)." },
-          ].map(x => (
-            <li key={x.role+x.org} className="card p-4">
-              <div className="flex items-baseline justify-between gap-6">
-                <div className="font-heading text-[16px] font-medium text-[var(--ink)]">{x.role} — {x.org}</div>
-                <div className="text-[12px] text-[color:var(--muted)] whitespace-nowrap">{x.meta}</div>
-              </div>
-              <p className="mt-1 text-[14px] leading-relaxed text-[color:var(--muted)]">{x.body}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
+          {/* Projects */}
+          <section id="projects" className="scroll-mt-32">
+            <div className="flex items-center gap-4">
+              <h2 className="section-title">Projects</h2>
+              <div className="title-rule flex-1" />
+            </div>
+            <div className="mt-6 grid sm:grid-cols-2 gap-6">
+              <article className="card p-5 hover:bg-white/[0.08] transition">
+                <header className="flex items-center justify-between">
+                  <h3 className="font-medium">Actor’s Friend</h3>
+                  <span className="text-xs text-white/60">React Native / Next.js</span>
+                </header>
+                <p className="mt-2 text-[14px] text-white/75">
+                  AI scene analysis, self-tape helper, audition tracker. Built end-to-end.
+                </p>
+                <div className="mt-4 text-sm text-white/70">OpenAI · Supabase · Expo</div>
+              </article>
 
-      {/* Projects */}
-      <section id="projects" className="section">
-        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">Projects</h3>
-        <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { title:"Real Estate AI", img:"/projects/real-estate-ai.png", desc:"SMS opt-in, double opt-in, Twilio compliance.", href:"https://github.com/AnnaMhairi/Real-Estate-AI", tags:["Next.js","Twilio","Prisma"], year:"2025" },
-            { title:"LookLab", img:"/projects/looklab.png", desc:"Fashion lookbook marketplace (Expo + web).", href:"#", tags:["Expo","RN","TS"], year:"2024" },
-            { title:"Alexander", img:"/projects/alexander.png", desc:"Self-tape helper & audition tracker with AI analysis.", href:"#", tags:["Next.js","AI","Design"], year:"2025" },
-          ].map(p => (
-            <a key={p.title} href={p.href} className="card p-3 transition hover:bg-white/10">
-              <div className="relative overflow-hidden rounded-md border border-white/10">
-                <Image alt={p.title} src={p.img} width={1200} height={800} className="h-44 w-full object-cover" />
-              </div>
-              <div className="mt-3 flex items-center justify-between">
-                <div className="font-heading text-[15px] font-medium text-[var(--ink)]">{p.title}</div>
-                <span className="text-[11px] text-[color:var(--muted)]">{p.year}</span>
-              </div>
-              <p className="mt-1 text-[14px] leading-relaxed text-[color:var(--muted)]">{p.desc}</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {p.tags.map(t => <span key={t} className="badge">{t}</span>)}
-              </div>
-            </a>
-          ))}
+              <article className="card p-5 hover:bg-white/[0.08] transition">
+                <header className="flex items-center justify-between">
+                  <h3 className="font-medium">Real Estate SMS AI</h3>
+                  <span className="text-xs text-white/60">Next.js / Twilio</span>
+                </header>
+                <p className="mt-2 text-[14px] text-white/75">
+                  Carrier-safe opt-in + conversational property search (A2P double opt-in).
+                </p>
+                <div className="mt-4 text-sm text-white/70">Prisma · Postgres · SMS</div>
+              </article>
+            </div>
+          </section>
+
+          {/* Contact */}
+          <section id="contact" className="scroll-mt-32">
+            <div className="flex items-center gap-4">
+              <h2 className="section-title">Contact</h2>
+              <div className="title-rule flex-1" />
+            </div>
+            <p className="mt-5 text-[15px] text-white/85">
+              Reach out for roles, collabs, or contract work. Best via email.
+            </p>
+            <div className="mt-4 flex items-center gap-4 text-white/80">
+              <a className="underline-offset-4 hover:underline" href="mailto:anna.m.macdonald@gmail.com">anna.m.macdonald@gmail.com</a>
+              <span>·</span>
+              <a className="underline-offset-4 hover:underline" href="https://github.com/AnnaMhairi">GitHub</a>
+              <span>·</span>
+              <a className="underline-offset-4 hover:underline" href="https://www.linkedin.com/in/annammacdonald">LinkedIn</a>
+            </div>
+          </section>
         </div>
-      </section>
-
-      {/* Acting */}
-      <section id="acting" className="section min-h-[40vh]">
-        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">Acting</h3>
-        <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">
-          Recurring TV roles (e.g. Showtime), indie features, and stage in LA/NYC. Training in on-camera, improv, VO.
-        </p>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="section min-h-[50vh]">
-        <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight tracking-tight text-[var(--ink)]">Contact</h3>
-        <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted)]">Email is best. Open to frontend &amp; solutions roles.</p>
-        <div className="mt-4 flex flex-wrap gap-3">
-          <a className="btn btn-accent" href="mailto:hello@yourdomain.com">Get in touch</a>
-          <a className="btn" href="https://linkedin.com/in/..." target="_blank" rel="noreferrer">LinkedIn</a>
-          <a className="btn btn-ghost" href="https://github.com/AnnaMhairi" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-      </section>
-      </>
+      </div>
+    </main>
   );
 }
